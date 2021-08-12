@@ -16,6 +16,7 @@ function App() {
 
       <TomatoButton>hello</TomatoButton>
       <Button primary>Oi</Button>
+      <Button>chicago</Button>
     </div>
   );
 }
