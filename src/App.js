@@ -17,6 +17,9 @@ function App() {
       <TomatoButton>hello</TomatoButton>
       <Button primary>Oi</Button>
       <Button>chicago</Button>
+      <Button as={ReversedButton}>
+        Custom Button with Normal Button styles
+      </Button>
     </div>
   );
 }
@@ -39,5 +42,9 @@ const TomatoButton = styled(Button)`
   border-color: tomato;
   background: honeydew;
 `;
+
+const ReversedButton = (props) => (
+  <Button {...props} children={props.children.split("").reverse()} />
+);
 
 export default App;
