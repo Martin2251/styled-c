@@ -16,6 +16,7 @@ function App() {
       </Button>
 
       <TomatoButton>hello</TomatoButton>
+      <LondonButton>hi</LondonButton>
       <Button primary>Oi</Button>
       <Button>chicago</Button>
       <Button as={ReversedButton}>
@@ -37,6 +38,12 @@ const Button = styled.a`
   border: 2px solid palevioletred;
   border-radius: 3px;
   text-decoration: none;
+`;
+
+const LondonButton = styled.a`
+  color: red;
+  border: 4px solid red;
+  border-radius: 3px;
 `;
 
 const TomatoButton = styled(Button)`
