@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import styled from "styled-components";
+import { keyframes } from "styled-components";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Button as={ReversedButton}>
         Custom Button with Normal Button styles
       </Button>
+      <Rotate>&lt; 💅🏾 &gt;</Rotate>
     </div>
   );
 }
@@ -47,4 +49,21 @@ const ReversedButton = (props) => (
   <Button {...props} children={props.children.split("").reverse()} />
 );
 
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
+// Here we create a component that will rotate everything we pass in over two seconds
+const Rotate = styled.div`
+  display: inline-block;
+  animation: ${rotate} 2s linear infinite;
+  padding: 2rem 1rem;
+  font-size: 1.2rem;
+`;
 export default App;
